@@ -1,0 +1,35 @@
+<ion-view view-title="Dashboard">
+  <ion-content class="padding">
+    <div id="share-container15">
+
+      <img ng-show="imgURI !== undefined" ng-src="{{imgURI}}">
+      <img ng-show="imgURI === undefined" ng-src="http://placehold.it/300x300">
+
+      <button ng-click="takePicture()" class="button button-light">Take a Photo</button>
+    </div>
+    <form id="share-form10" class="list">
+      <label class="item item-select" id="share-select5">
+        <span class="input-label">Category</span>
+        <select>
+          <option>Select</option>
+          <option>Beach</option>
+          <option>City</option>
+          <option>Mountains</option>
+          <option>Forest</option>
+          <option>Park</option>
+        </select>
+      </label>
+      <div class="spacer" style="width: 283px; height: 15px;"></div>
+      <label class="item item-input" id="share-input8">
+        <span class="input-label">Tag</span>
+        <input placeholder="Write a tag" type="text">
+      </label>
+      <div class="spacer" style="width: 283px; height: 15px;"></div>
+      <label class="item item-input" id="share-input7">
+        <span class="input-label">Description</span>
+        <input placeholder="Write a description" type="text">
+      </label>
+    </form>
+
+  </ion-content>
+</ion-view>
