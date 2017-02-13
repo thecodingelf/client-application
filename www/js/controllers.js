@@ -1,74 +1,151 @@
-angular.module('app.controllers', [])
-  
-.controller('mestaCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
-// You can include any angular dependencies as parameters for this function
-// TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
+var testapp = angular.module('starter.controllers', ['ngCordova']);
 
+testapp.controller('HomeCtrl', function($scope, $rootScope) {
 
-}])
-   
-.controller('searchCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
-// You can include any angular dependencies as parameters for this function
-// TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
+  $scope.datas = [{
+    username:  'c2koju00',
+    image: 'img/aurora.jpeg',
+    comment: 'Nice picture!'
+  },
+    {
+      username: 'giograf-',
+      image: 'img/aurora.jpeg',
+      comment: 'Cool'
+    },
+    {
+      username: 'c2koju00',
+      image: 'img/aurora.jpeg',
+      comment: 'That is Epic.'
+    }
+  ];
 
+});
 
-}])
-   
-.controller('shareCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
-// You can include any angular dependencies as parameters for this function
-// TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
+testapp.controller('SearchCtrl', function($scope) {
 
+});
 
-}])
-      
-.controller('profileCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
-// You can include any angular dependencies as parameters for this function
-// TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
+testapp.controller('PhotoCtrl', function($scope) {
 
+});
 
-}])
-   
-.controller('logInCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
-// You can include any angular dependencies as parameters for this function
-// TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
+testapp.controller('FollowersCtrl', function($scope) {
 
+});
 
-}])
-   
-.controller('signUpCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
-// You can include any angular dependencies as parameters for this function
-// TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
+testapp.controller('ProfileCtrl', function($scope, $cordovaImagePicker) {
 
-
-}])
-   
-.controller('editProfileCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
-// You can include any angular dependencies as parameters for this function
-// TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
-
-
-}])
-   
-.controller('searchUserCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
-// You can include any angular dependencies as parameters for this function
-// TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
-
-
-}])
-   
-.controller('searchTagCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
-// You can include any angular dependencies as parameters for this function
-// TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
-
-
-}])
+  $scope.images = [];
  
+    $scope.loadImages = function() {
+        for(var i = 0; i < 100; i++) {
+            $scope.images.push({id: i, src: "img/aurora.jpeg"});
+        }
+    }
+
+   var options = {
+   
+   maximumImagesCount: 10,
+   width: 300,
+   height: 300,
+   quality: 80
+  
+};
+
+  $cordovaImagePicker.getPictures(options)
+    .then(function (results) {
+      for (var i = 0; i < results.length; i++) {
+        console.log('Image URI: ' + results[i]);
+      }
+    }, function(error) {
+      // error getting photos
+    });
+
+});
+
+testapp.controller('EditprofileCtrl', function($scope) {
+
+
+});
+
+// Handles the login and login out.
+testapp.controller('LoginCtrl', function($scope, $http) {
+ 
+$scope.PostData = function(){
+
+ var req = {
+
+ method: 'POST',
+ url: 'http://mesta-server.herokuapp.com/users/in',
+ headers: {
+   'Content-Type': 'application/json'
+ },
+ data: {
+    username: 'string',
+    hash: 'string'
+  }
+}
+$http(req).then(function succesCallback(response){
+
+console.log(response.data);
+console.log(PostData);
+
+  }, 
+  function(){
+
+    });
+}
+
+
+});
+
+testapp.controller('SignupCtrl', function($scope, $http) {
+
+ var req = {
+
+ method: 'POST',
+ url: 'http://mesta-server.herokuapp.com/users',
+ headers: {
+   'Content-Type': 'application/json'
+ },
+ data: { 
+   username: 'string',
+   hash: 'string',
+   email: 'string'
+  }
+}
+
+$http(req).then(function(){
+
+  }, 
+  function(){
+
+    });
+
+});
+
+testapp.controller("PhotoCtrl", function($scope, $cordovaCamera, $rootScope) {
+
+  $scope.takePicture = function() {
+    var options = {
+      quality : 75,
+      destinationType : Camera.DestinationType.DATA_URL,
+      sourceType : Camera.PictureSourceType.CAMERA,
+      allowEdit : true,
+      encodingType: Camera.EncodingType.JPEG,
+      targetWidth: 300,
+      targetHeight: 300,
+      popoverOptions: CameraPopoverOptions,
+      saveToPhotoAlbum: false
+    };
+
+    $cordovaCamera.getPicture(options).then(function(imageData) {
+      $scope.imgURI = "data:image/jpeg;base64," + imageData;
+       $rootScope.imgURI = "data:image/jpeg;base64," + imageData;
+    }, function(err) {
+      // An error occured. Show a message to the user
+    });
+  }
+
+  
+});

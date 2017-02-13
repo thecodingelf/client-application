@@ -1,9 +1,15 @@
 <ion-view view-title="Profile">
   <ion-content>
     <div id="editProfile-container16">
-      <div class="item item-body" id="editProfile-list-item-container8" style="">
-        <button id="editProfile-button51" class="button button-light  button-block">Change Profile Image</button>
-        <a ui-sref="profile" id="editProfile-button52" class="button button-light  button-block">Save Changes</a>
+      <div class="item item-body" id="editProfile-list-item-container8">
+
+        
+        <img ng-show="imgURI !== undefined" ng-src="{{imgURI}}">
+        <img ng-show="imgURI === undefined" ng-src="http://placehold.it/150x150">
+       
+        <button ng-click="getPictures()" id="editProfile-button51" class="button button-light  button-block">Change Profile Image</button>
+        <a ui-sref="tab.profile" id="editProfile-button52" class="button button-light  button-block">Save Changes</a>
+
       </div>
     </div>
   </ion-content>
