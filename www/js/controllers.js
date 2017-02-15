@@ -36,7 +36,7 @@ testapp.controller('FollowersCtrl', function($scope) {
 testapp.controller('ProfileCtrl', function($scope, $cordovaImagePicker) {
 
   $scope.images = [];
- 
+
     $scope.loadImages = function() {
         for(var i = 0; i < 100; i++) {
             $scope.images.push({id: i, src: "img/aurora.jpeg"});
@@ -44,12 +44,12 @@ testapp.controller('ProfileCtrl', function($scope, $cordovaImagePicker) {
     }
 
    var options = {
-   
+
    maximumImagesCount: 10,
    width: 300,
    height: 300,
    quality: 80
-  
+
 };
 
   $cordovaImagePicker.getPictures(options)
@@ -70,8 +70,6 @@ testapp.controller('EditprofileCtrl', function($scope) {
 
 // Handles the login and login out.
 testapp.controller('LoginCtrl', function($scope, $http) {
- 
-$scope.PostData = function(){
 
  var req = {
 
@@ -90,37 +88,10 @@ $http(req).then(function succesCallback(response){
 console.log(response.data);
 console.log(PostData);
 
-  }, 
-  function(){
-
-    });
-}
-
-
+  });
 });
 
 testapp.controller('SignupCtrl', function($scope, $http) {
-
- var req = {
-
- method: 'POST',
- url: 'http://mesta-server.herokuapp.com/users',
- headers: {
-   'Content-Type': 'application/json'
- },
- data: { 
-   username: 'string',
-   hash: 'string',
-   email: 'string'
-  }
-}
-
-$http(req).then(function(){
-
-  }, 
-  function(){
-
-    });
 
 });
 
@@ -147,5 +118,5 @@ testapp.controller("PhotoCtrl", function($scope, $cordovaCamera, $rootScope) {
     });
   }
 
-  
+
 });
