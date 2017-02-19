@@ -105,27 +105,7 @@ var hash = user.calchash(password)
 
 }
 
- var req = {
 
- method: 'POST',
- url: 'http://mesta-server.herokuapp.com/users/in',
- headers: {
-   'Content-Type': 'application/json'
- },
- data: {
-    username: 'string',
-    hash: 'string'
-  }
-}
-
-$http(req).then(function succesCallback(response){
-
-console.log(response.data);
-console.log(PostData);
-
-/*$state.go('tab.home');*/
-
-  });
 
 });
 
