@@ -8,7 +8,6 @@
 
 var myApp = angular.module('myApp', ['ionic', 'ngCordova', 'starter.controllers', 'starter.services']);
 
-
 myApp.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -109,16 +108,7 @@ myApp.config(function($ionicConfigProvider, $stateProvider, $urlRouterProvider) 
 
 });
 
-/*$http({
-  method: 'GET',
-  url: 'http://mesta-server.herokuapp.com/'
-}).then(function successCallback(response) {
-    // this callback will be called asynchronously
-    // when the response is available
-  }, function errorCallback(response) {
-    // called asynchronously if an error occurs
-    // or server returns response with an error status.
-  });*/
+
 
 
 

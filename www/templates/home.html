@@ -7,7 +7,7 @@
           <h2>{{data.username}}</h2>
         </ion-item>
         <div style="margin: 0px; line-height: 250px; background-color: rgb(232, 235, 239); text-align: center;">
-          <img class="img" ng-src="{{data.image}}">
+          <img class="item item-image" ng-src="{{data.image}}">
         </div>
         <div class="item item-body" id="mesta-list-item-container7">
           <div id="mesta-markdown7" class="show-list-numbers-and-dots">
@@ -15,7 +15,7 @@
           </div>
         </div>
         <div id="mesta-button-bar2" class="button-bar">
-          <button id="mesta-button13" class="button button-light  icon ion-ios-heart-outline"></button>
+          <button class="icon button button-icon" ng-class="{'ion-ios-heart': post.userLike, 'ion-ios-heart-outline': !post.userLike}" ng-click="toggleLike(post)"></button>
           <button id="mesta-button14" class="button button-light  button-block icon ion-map"></button>
           <button id="mesta-button16" class="button button-light  button-block icon ion-ios-compose-outline"></button>
         </div>

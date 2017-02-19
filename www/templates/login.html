@@ -2,18 +2,24 @@
   <ion-content padding="true" class="has-header">
     <form class="list">
       <ion-list>
+
         <label class="item item-input">
           <span class="input-label">Username</span>
-          <input placeholder="" type="text">
+          <input placeholder="" type="text" ng-model="username">
         </label>
+
         <div class="space"></div>
+
         <label class="item item-input">
           <span class="input-label">Password</span>
-          <input placeholder="" type="password">
+          <input placeholder="" type="password" ng-model="password">
         </label>
+
       </ion-list>
       <div class="space" style="height: 40px;"></div>
-      <a ui-sref="tab.home"  class="button button-light  button-block">Log in</a>
+      <!-- Logs user in if the account exists. -->
+      <a ng-click="login(username, password)"  class="button button-light  button-block">Log in</a>
+      <!-- Use can go and create the account. -->
       <a ui-sref="signup"  class="button button-positive  button-block button-clear">Sign Up</a>
     </form>
   </ion-content>
