@@ -23,18 +23,16 @@ $http(req).then(function succesCallback(response){
 
 var sessionToken = response.sessionToken
 
-$state.go('tab.home');
-
   });
 
 });            
         },
-        // Function 3.
+        // Function 3: Calculating the hash.
         calchash: function()
         {
            
             password: {
-                
+
             }
 
         },
