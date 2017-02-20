@@ -101,11 +101,17 @@ testapp.controller('LoginCtrl', function($scope, $http) {
 
 $scope.login = function(username, password){
 
-var hash = user.calchash(password)
+var hash = user.calchash(password);
 
+var sessionToken = user.login(username, hash);
+
+if (sessionToken != undefined){
+
+  $state.go(tab.home)
+  
 }
 
-
+} 
 
 });
 

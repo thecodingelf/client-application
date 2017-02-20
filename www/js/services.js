@@ -27,9 +27,18 @@ $state.go('tab.home');
 
   });
 
-            });            
+});            
         },
-        // Function 2.
+        // Function 3.
+        calchash: function()
+        {
+           
+            password: {
+                
+            }
+
+        },
+        // Function 4.
         getOne: function(key)
         {
             return $q(function(resolve, reject){
@@ -44,12 +53,12 @@ $state.go('tab.home');
                 
             });
         },
-        // Function 3.
+        // Function 5.
         getActiveUser: function()
         {
             return activeUser;
         },
-        // Function 4.
+        // Function 6.
         getActiveUserActivity: function()
         {
             return activeUser.activity;
