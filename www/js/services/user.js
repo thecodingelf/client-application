@@ -1,4 +1,4 @@
-app.factory('User', ['$http', '$state', function ($http, $state) {
+app.factory('User', ['$http', '$state', '$q', function ($http, $state, $q) {
   return {
     signup: function (username, password, email) {
       // Request for signing up
@@ -69,16 +69,19 @@ app.factory('User', ['$http', '$state', function ($http, $state) {
         $state.go('tab.login');
       });
     },
-    getCurrentUserData: function($scope) {
+    getCurrentUserData: function() {
       var userId = Cookies.get('userId').toString();
-      var url = 'http://mesta-server.herokuapp.com/users/profile/' + Cookies.get('userId');
-
+      console.log(userId);
+      var url = serverUrl + 'users/profile/' + Cookies.get('userId');
+      console.log(url);
+      return $q(function (resolve, reject) {
       // Send the crafted request for getting profile data of the current user
-      $http.get(url).then(function succesCallback(response) {
-        var data = response.data;
+      $http.get(url).then(function (response) {
         // Attach user's data to the scope of the profile controller
-        return data;
+        console.log(response.data);
+        resolve(response.data);
       });
+    });
     }
   }
 }]);

@@ -1,4 +1,5 @@
 const imageStorageUrlPrepend = "http://res.cloudinary.com/hvesn9ggf/image/upload/";
+const serverUrl = "https://mesta-server.herokuapp.com/";
 // Handles the main view.
 app.controller('HomeCtrl', function ($scope) {
 // Creates fake posts to the main view.
@@ -60,16 +61,22 @@ app.controller('FollowersCtrl', function ($scope) {
 // Handles the profile page.
 app.controller('ProfileCtrl', ['$scope', '$cordovaImagePicker', 'User', function ($scope, $cordovaImagePicker, User) {
 
-  User.getCurrentUserData();
+  // Use User service to get the data about current user at onload of profile
+  User.getCurrentUserData().then(function (data) {
+    // Prepend the sites const URL to the trailing parameter of the image
+    data.profilePicture = imageStorageUrlPrepend + data.profilePicture;
+    notprocesses_images = data.photos;
+    $scope.images = [];
+    notprocesses_images.forEach(function (image) {
+      image.img = imageStorageUrlPrepend + image.img;
+      $scope.images.push(image)
+    });
+    $scope.data = data;
+    $scope.images = data.photos;
+    console.log($scope.images)
+  });
 
-// Loads the images to the view.
-  $scope.images = [];
 
-  $scope.loadImages = function () {
-    for (var i = 0; i < 100; i++) {
-      $scope.images.push({id: i, src: "img/aurora.jpeg"});
-    }
-  };
 // Handles the image settings and how many images you can see at the time.
   var options = {
 
@@ -79,15 +86,6 @@ app.controller('ProfileCtrl', ['$scope', '$cordovaImagePicker', 'User', function
     quality: 80
 
   };
-// Opens up phone's image gallery.
-  $cordovaImagePicker.getPictures(options)
-    .then(function (results) {
-      for (var i = 0; i < results.length; i++) {
-        console.log('Image URI: ' + results[i]);
-      }
-    }, function (error) {
-      // error getting photos
-    });
 
 }]);
 
@@ -99,9 +97,11 @@ app.controller('EditprofileCtrl', function ($scope) {
 // Handles the login and login out.
 app.controller('LoginCtrl', ['$scope', 'User', function ($scope, User) {
 
+  // Initialize variables required for sing-in
   $scope.username = "";
   $scope.password = "";
 
+  // Function for logging in user through a button in a view through User service
   $scope.login = function (username, password) {
     User.login(username, password);
   };
@@ -110,10 +110,12 @@ app.controller('LoginCtrl', ['$scope', 'User', function ($scope, User) {
 // Handles the sign up.
 app.controller('SignupCtrl', ['$scope', 'User', function ($scope, User) {
 
+  // Initialize variables required for sign-up
   $scope.username = "";
   $scope.password = "";
   $scope.email = "";
 
+  // Function for logging in user through a button in a view through User service*
   $scope.signup = function (username, password, email) {
     User.signup(username, password, email);
   };
