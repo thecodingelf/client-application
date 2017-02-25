@@ -6,9 +6,9 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 
-var myApp = angular.module('myApp', ['ionic', 'ngCordova', 'starter.controllers', 'starter.services']);
+var app = angular.module('app', ['ionic', 'ngCordova']);
 
-myApp.run(function($ionicPlatform) {
+app.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -24,7 +24,7 @@ myApp.run(function($ionicPlatform) {
   });
 });
 
-myApp.config(function($ionicConfigProvider, $stateProvider, $urlRouterProvider) {
+app.config(function($ionicConfigProvider, $stateProvider, $urlRouterProvider) {
   $ionicConfigProvider.views.maxCache(5);
 
   // note that you can also chain configs

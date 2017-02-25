@@ -5,22 +5,22 @@
 
         <label class="item item-input" id="signUp-input3">
           <span class="input-label">Email</span>
-          <input placeholder="Write your email." type="email">
+          <input placeholder="Write your email." type="email" ng-model="email">
         </label>
 
         <label class="item item-input" id="signUp-input4">
           <span class="input-label">Username</span>
-          <input placeholder="Write your username." type="text">
+          <input placeholder="Write your username." type="text" ng-model="username">
         </label>
 
         <label class="item item-input" id="signUp-input5">
           <span class="input-label">Password</span>
-          <input placeholder="Write your password." type="password">
+          <input placeholder="Write your password." type="password" ng-model="password">
         </label>
-        
+
       </ion-list>
       <!-- User creates account and is redirected to main view. -->
-      <a ng-click="" id="signUp-button3" class="button button-light  button-block">Sign up</a>
+      <a ng-click="signup(username, password, email)" id="signUp-button3" class="button button-light  button-block">Sign up</a>
     </form>
   </ion-content>
 </ion-view>

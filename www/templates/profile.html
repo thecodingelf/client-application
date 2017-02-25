@@ -1,34 +1,46 @@
 <ion-view view-title="Profile">
-  <ion-content ng-init="loadImages()">
+  <ion-nav-buttons side="primary">
+      <button class="button-icon icon ion-gear-a" ng-click="modal.show()">
+      </button>
+    </ion-nav-buttons>
+  <ion-content>
     <div id="profile-container12">
       <ion-list id="profile-list8">
-        <ion-item class="item-icon-left" id="profile-list-item41">
+        <ion-item class="" id="profile-list-item41">
           <div class="row">
-            <div class="col"><img ng-src="getPictures()"></div>
-            <div class="col"><p class="statistics">10</p> <h6>Photos</h6></div>
-            <div class="col"><p class="statistics">35</p> <h6>Following</h6></div>
-            <div class="col"><p class="statistics">20</p> <h6>Followed</h6></div>
+            <div class="col col-25"><img ng-src="{{data.profilePicture}}" width="80"></div>
+            <div class="col col-85">
+              <div class="row"><strong>{{data.username}}</strong></div>
+              <div class="row">
+                <div class="col"><p class="statistics">{{data.photos.length || 0}}</p> <h6>Photos</h6></div>
+                <div class="col"><p class="statistics">{{data.following.length }}</p> <h6>Following</h6></div>
+                <div class="col"><p class="statistics">{{data.followers.length }}</p> <h6>Followed</h6></div>
+              </div>
+            </div>
           </div>
         </ion-item>
       </ion-list>
-      <a ng-click="getPictures()" id="profile-button50" style="text-align:right;" class="button button-light button-block">Change Profile Image</a>
+      <a ng-click="getPictures()" id="profile-button50" style="text-align:right;"
+         class="button button-light button-block">Change Profile Image</a>
     </div>
 
     <div id="profile-container13">
+      <div class="row" ng-repeat="image in images" ng-if="$index % 3 === 0">
 
-   <div class="row" ng-repeat="image in images" ng-if="$index % 3 === 0">
-        
         <div class="col col-30" ng-if="$index < images.length">
-            <img ng-src="{{images[$index].src}}" width="100%" />
+          <img ng-src="{{images[$index].img}}" width="100%" />
         </div>
         <div class="col col-30" ng-if="$index + 1 < images.length">
-            <img ng-src="{{images[$index + 1].src}}" width="100%" />
+          <img ng-src="{{images[$index + 1].img}}" width="100%" />
+        </div>
+        <div class="col col-30" ng-if="$index + 1 >= images.length">
         </div>
         <div class="col col-30" ng-if="$index + 2 < images.length">
-            <img ng-src="{{images[$index + 2].src}}" width="100%" />
+          <img ng-src="{{images[$index + 2].img}}" width="100%" />
         </div>
-    </div>
-
+        <div class="col col-30" ng-if="$index + 2 >=  images.length">
+        </div>
+      </div>
     </div>
   </ion-content>
 </ion-view>

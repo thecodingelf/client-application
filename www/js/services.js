@@ -1,4 +1,6 @@
-myApp.factory('Users', function() {
+var testapp = angular.module('starter.services', ['ngCordova']);
+
+testapp.factory('Users', function() {
   
   return {
       // Function 1.

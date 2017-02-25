@@ -1,11 +1,10 @@
-var testapp = angular.module('starter.controllers', ['ngCordova']);
-
+const imageStorageUrlPrepend = "http://res.cloudinary.com/hvesn9ggf/image/upload/";
+const serverUrl = "https://mesta-server.herokuapp.com/";
 // Handles the main view.
-testapp.controller('HomeCtrl', function($scope) {
-
+app.controller('HomeCtrl', function ($scope) {
 // Creates fake posts to the main view.
   $scope.datas = [{
-    username:  'c2koju00',
+    username: 'c2koju00',
     image: 'img/aurora.jpeg',
     comment: 'Nice picture!'
   },
@@ -24,19 +23,36 @@ testapp.controller('HomeCtrl', function($scope) {
 });
 
 // Handles the search events
-testapp.controller('SearchCtrl', function($scope) {
+app.controller('SearchCtrl', function ($scope) {
+
+ $scope.infos = [{
+    username: 'c2koju00',
+    image: 'img/chromium.png',
+    tags: 'City'
+ },
+ {
+    username: 'giograf-',
+    image: 'img/chromium.png',
+    tags: 'Park'
+ },
+ {
+    username: 'GreatAgain',
+    image: 'img/chromium.png',
+    tags: 'Mountains'
+ }
+ ]
 
 });
 
 // Handles the phone camera.
-testapp.controller("PhotoCtrl", function($scope, $cordovaCamera, $rootScope) {
+app.controller("PhotoCtrl", function ($scope, $cordovaCamera, $rootScope) {
 // Handles the opening the camera and settings for the image and options.
-  $scope.takePicture = function() {
+  $scope.takePicture = function () {
     var options = {
-      quality : 75,
-      destinationType : Camera.DestinationType.DATA_URL,
-      sourceType : Camera.PictureSourceType.CAMERA,
-      allowEdit : true,
+      quality: 75,
+      destinationType: Camera.DestinationType.DATA_URL,
+      sourceType: Camera.PictureSourceType.CAMERA,
+      allowEdit: true,
       encodingType: Camera.EncodingType.JPEG,
       targetWidth: 300,
       targetHeight: 300,
@@ -44,101 +60,111 @@ testapp.controller("PhotoCtrl", function($scope, $cordovaCamera, $rootScope) {
       saveToPhotoAlbum: false
     };
 // Displays the taken image in the view.
-    $cordovaCamera.getPicture(options).then(function(imageData) {
+    $cordovaCamera.getPicture(options).then(function (imageData) {
       $scope.imgURI = "data:image/jpeg;base64," + imageData;
-       $rootScope.imgURI = "data:image/jpeg;base64," + imageData;
-    }, function(err) {
+      $rootScope.imgURI = "data:image/jpeg;base64," + imageData;
+    }, function (err) {
       // An error occured. Show a message to the user
     });
   }
 
-  
+
 });
 
-testapp.controller('FollowersCtrl', function($scope) {
+app.controller('FollowersCtrl', function ($scope) {
 
 });
 
 // Handles the profile page.
-testapp.controller('ProfileCtrl', function($scope, $cordovaImagePicker) {
+app.controller('ProfileCtrl', ['$scope', '$cordovaImagePicker', 'User', '$ionicModal', function ($scope, $cordovaImagePicker, User, $ionicModal) {
 
-// Loads the images to the view.
-  $scope.images = [];
- 
-    $scope.loadImages = function() {
-        for(var i = 0; i < 100; i++) {
-            $scope.images.push({id: i, src: "img/aurora.jpeg"});
-        }
-    }
-// Handles the image settings and how many images you can see at the time.
-   var options = {
-   
-   maximumImagesCount: 10,
-   width: 300,
-   height: 300,
-   quality: 80
-  
-};
-// Opens up phone's image gallery.
-  $cordovaImagePicker.getPictures(options)
-    .then(function (results) {
-      for (var i = 0; i < results.length; i++) {
-        console.log('Image URI: ' + results[i]);
-      }
-    }, function(error) {
-      // error getting photos
+  // Use User service to get the data about current user at onload of profile
+  User.getCurrentUserData().then(function (data) {
+    // Prepend the sites const URL to the trailing parameter of the image
+    data.profilePicture = imageStorageUrlPrepend + data.profilePicture;
+    notprocesses_images = data.photos;
+    $scope.images = [];
+    notprocesses_images.forEach(function (image) {
+      image.img = imageStorageUrlPrepend + image.img;
+      $scope.images.push(image)
     });
+    $scope.data = data;
+    $scope.images = data.photos;
+    console.log($scope.images)
+  });
 
-});
+// Handles the image settings and how many images you can see at the time.
+  var options = {
 
-testapp.controller('EditprofileCtrl', function($scope) {
+    maximumImagesCount: 10,
+    width: 300,
+    height: 300,
+    quality: 80
+
+  };
+
+  // Handles the modal functions.
+  $ionicModal.fromTemplateUrl('templates/options.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+  // Opens the modal.
+  $scope.openModal = function() {
+    $scope.modal.show();
+  };
+  // Closes the modal.
+  $scope.closeModal = function() {
+    $scope.modal.hide();
+  };
+  // Cleanup the modal when we're done with it!
+  $scope.$on('$destroy', function() {
+    $scope.modal.remove();
+  });
+  // Execute action on hide modal
+  $scope.$on('modal.hidden', function() {
+    // Execute action
+  });
+  // Execute action on remove modal
+  $scope.$on('modal.removed', function() {
+    // Execute action
+  });
+
+$scope.logout = function () {
+    User.logout();
+  };
+
+}]);
+
+app.controller('EditprofileCtrl', function ($scope) {
 
 
 });
 
 // Handles the login and login out.
-testapp.controller('LoginCtrl', function($scope, $http) {
+app.controller('LoginCtrl', ['$scope', 'User', function ($scope, User) {
 
-$scope.login = function(username, password){
+  // Initialize variables required for sing-in
+  $scope.username = "";
+  $scope.password = "";
 
-var hash = user.calchash(password);
-
-var sessionToken = user.login(username, hash);
-
-if (sessionToken != undefined){
-
-  $state.go(tab.home)
-  
-}
-
-} 
-
-});
+  // Function for logging in user through a button in a view through User service
+  $scope.login = function (username, password) {
+    User.login(username, password);
+  };
+}]);
 
 // Handles the sign up.
-testapp.controller('SignupCtrl', function($scope, $http) {
+app.controller('SignupCtrl', ['$scope', 'User', function ($scope, User) {
 
- /*var req = {
+  // Initialize variables required for sign-up
+  $scope.username = "";
+  $scope.password = "";
+  $scope.email = "";
 
- method: 'POST',
- url: 'http://mesta-server.herokuapp.com/users',
- headers: {
-   'Content-Type': 'application/json'
- },
- data: { 
-   username: 'string',
-   hash: 'string',
-   email: 'string'
-  }
-}
-
-$http(req).then(function(){
-
-  }, 
-  function(){
-
-    });*/
-
-});
-
-
+  // Function for logging in user through a button in a view through User service*
+  $scope.signup = function (username, password, email) {
+    User.signup(username, password, email);
+  };
+}]);
