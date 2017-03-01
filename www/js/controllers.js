@@ -34,11 +34,26 @@ app.controller('HomeCtrl', [ "$scope", "User", "Post", function ($scope, User, P
 }]);
 
 // Handles the search events
-app.controller('SearchCtrl', function ($scope) {
+app.controller('SearchCtrl', function ($scope, $state) {
 
-  // Initialize variables needed for search
+  $scope.activateSearch = function()
+    {
+        $state.go('tab.search-browse');
+    }
+
+});
+
+app.controller('BrowseCtrl', function($scope){
+
+ // Initialize variables needed for search
   $scope.tag = "";
   $scope.username = "";
+
+  // Tab control for the search
+   $scope.tabs = {
+        Users: true,
+        Tags: false
+    };
 
   // User is searched for when field value is changed and if
   $scope.searchUser = function (username) {
@@ -151,6 +166,7 @@ app.controller('ProfileCtrl', ['$scope', '$cordovaImagePicker', 'User', '$ionicM
 
 $scope.logout = function () {
     User.logout();
+    $scope.modal.remove();
   };
 
 }]);

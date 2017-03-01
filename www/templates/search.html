@@ -4,30 +4,48 @@
       <form id="search-form11" class="list">
         <label class="item item-input" id="search-search2">
           <i class="icon ion-search placeholder-icon"></i>
-          <input placeholder="Search by tag or user" type="search">
+          <input placeholder="Search by tag or user" type="search" ng-click="activateSearch()">
         </label>
       </form>
     </div>
     <div id="search-container9">
      
-        <div id="search-container17">
+       <div class="imageHolder">
+            <div class="imageFrameThree">
+                <img src="img/aurora.jpeg">
+            </div>            
+            <div class="imageFrameThree">
+                <img src="img/aurora.jpeg">
+            </div>
+            <div class="imageFrameThree">
+                <img src="img/aurora.jpeg">
+            </div>
+            <div class="imageFrameThree">
+                <img src="img/aurora.jpeg">
+            </div>
+            <div class="imageFrameThree">
+                <img src="img/aurora.jpeg">
+            </div>
+        </div>
+<!--        <div id="search-container17">
           <div id="search-button-bar10" class="button-bar">
             <button ng-click="activeButton = 'users'" ng-class="{ 'active': activeButton === 'users' }" id="search-button57" class="button button-light button-block">Users</button>
-            <button ng-click="activeButton = 'tags'" ng-class="{ 'active': activeButton === 'tags' }" id="search-button58" class="button button-light  button-block">Tags</button>
+            <button ng-click="activeButton = 'tags'" ng-class="" id="search-button58" class="button button-light  button-block">Tags</button>
           </div>
         </div>
 
-        <div  ng-show="activeButton === 'users'" ng-repeat="info in infos">
+        <div  ng-show="activeButton === 'users'">
         <ion-item class="item-avatar" id="mesta-list-item13">
-          <img ng-src="{{info.image}}">
-          <h2>{{info.username}}</h2>
+          <img ng-src="{{data.profilePicture}}">
+          <h2>Hei</h2>
         </ion-item>
+
         </div>
-        <div class="tags_content" ng-show="activeButton === 'tags'" ng-repeat="info in infos">
+        <div class="tags_content" ng-show="activeButton === 'tags'" >
         <ion-item id="mesta-list-item13">
-          <h2>#{{info.tags}}</h2>
+          <h2>#park</h2>
         </ion-item>
-        </div>
+        </div>-->
 
     </div>
   </ion-content>
