@@ -63,16 +63,6 @@ app.config(function($ionicConfigProvider, $stateProvider, $urlRouterProvider) {
       }
     })
 
-    .state('tab.search-browse', {
-    url: '/search',
-      views: {
-        'tab-browse': {
-          templateUrl: 'templates/tab-browse.html',
-          controller: 'BrowseCtrl'
-      }
-    }
-  })  
-
     .state('tab.photo', {
       url: '/photo',
       views: {
