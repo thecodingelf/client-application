@@ -16,10 +16,11 @@ app.factory('User', ['$http', '$state', '$q', function ($http, $state, $q) {
       };
       // Send the crafted request and save the session token in a cookie if received.
       $http(req).then(function succesCallback(response) {
-        if(response.data.token != undefined){
-        // Store the token in a cookie and move to the home tab
-          Cookies.set('sessionToken', response.data.token.toString() , { expires: 14 });
-          Cookies.set('userId', response.data.userId.toString() , { expires: 14 });
+        if (response.data.token != undefined) {
+          // Store the token in a cookie and move to the home tab
+          Cookies.set('sessionToken', response.data.token.toString(), {expires: 14});
+          Cookies.set('userId', response.data.userId.toString(), {expires: 14});
+          Cookies.set('username', username, {expires: 14});
           $state.go('tab.home');
         }
       });
@@ -39,10 +40,11 @@ app.factory('User', ['$http', '$state', '$q', function ($http, $state, $q) {
       };
       // Send the crafted request and save the session token in a cookie if received.
       $http(req).then(function succesCallback(response) {
-        if(response.data.token != undefined){
+        if (response.data.token != undefined) {
           // Store the token in a cookie and move to the home tab
-          Cookies.set('sessionToken', response.data.token.toString() , { expires: 14 });
-          Cookies.set('userId', response.data.userId.toString() , { expires: 14 });
+          Cookies.set('sessionToken', response.data.token.toString(), {expires: 14});
+          Cookies.set('userId', response.data.userId.toString(), {expires: 14});
+          Cookies.set('username', username, {expires: 14});
           $state.go('tab.home');
         }
       });
@@ -69,19 +71,46 @@ app.factory('User', ['$http', '$state', '$q', function ($http, $state, $q) {
         $state.go('tab.login');
       });
     },
-    getCurrentUserData: function() {
+    getCurrentUserData: function () {
       var userId = Cookies.get('userId').toString();
-      console.log(userId);
       var url = serverUrl + 'users/profile/' + Cookies.get('userId');
-      console.log(url);
       return $q(function (resolve, reject) {
-      // Send the crafted request for getting profile data of the current user
-      $http.get(url).then(function (response) {
-        // Attach user's data to the scope of the profile controller
-        console.log(response.data);
+        // Send the crafted request for getting profile data of the current user
+        $http.get(url).then(function (response) {
+          // Attach user's data to the scope of the profile controller
+          resolve(response.data);
+        });
+      });
+    },
+    searchUser: function (username) {
+      var url = serverUrl + 'users/' + username;
+      return $q(function (resolve, reject) {
+        // Send the crafted request for searching user by username
+        $http.get(url).then(function (response) {
+          // Attach user's data to the scope of the profile controller
+          resolve(response.data);
+        });
+      });
+    },
+    follow: function (usernameToFollow) {
+      // Get the current session token needed for following function
+      var sessionToken = Cookies.get('sessionToken');
+      // Request for following
+      var req = {
+        method: 'POST',
+        url: 'http://mesta-server.herokuapp.com/users/follow',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        data: {
+          usernameToFollow: usernameToFollow,
+          sessionToken: sessionToken
+        }
+      };
+      // Send the crafted request for following
+      $http(req).then(function succesCallback(response) {
         resolve(response.data);
       });
-    });
     }
   }
 }]);

@@ -1,7 +1,7 @@
 const imageStorageUrlPrepend = "http://res.cloudinary.com/hvesn9ggf/image/upload/";
 const serverUrl = "https://mesta-server.herokuapp.com/";
 // Handles the main view.
-app.controller('HomeCtrl', function ($scope) {
+app.controller('HomeCtrl', [ "$scope", "User", "Post", function ($scope, User, Post) {
 // Creates fake posts to the main view.
   $scope.datas = [{
     username: 'c2koju00',
@@ -19,28 +19,36 @@ app.controller('HomeCtrl', function ($scope) {
       comment: 'That is Epic.'
     }
   ];
-
-});
+  // Get all of the data for the user home page
+  $scope.getHome = function () {
+    $scope.arrayOfPosts = Post.getHome();
+  };
+  // Like (supply id of the picture/post)
+  $scope.like = function (id) {
+    Post.like(id);
+  };
+  // Like (supply id of the picture/post) and the comment itself
+  $scope.comment = function (id, comment) {
+    Post.comment(id, comment);
+  };
+}]);
 
 // Handles the search events
 app.controller('SearchCtrl', function ($scope) {
 
- $scope.infos = [{
-    username: 'c2koju00',
-    image: 'img/chromium.png',
-    tags: 'City'
- },
- {
-    username: 'giograf-',
-    image: 'img/chromium.png',
-    tags: 'Park'
- },
- {
-    username: 'GreatAgain',
-    image: 'img/chromium.png',
-    tags: 'Mountains'
- }
- ]
+  // Initialize variables needed for search
+  $scope.tag = "";
+  $scope.username = "";
+
+  // User is searched for when field value is changed and if
+  $scope.searchUser = function (username) {
+    $scope.usersFound = searchUser(username);
+  };
+
+  // User is searched for when field value is changed and if
+  $scope.searchByTag = function (tag) {
+    $scope.usersPosts = searchByTag(tag);
+  };
 
 });
 
@@ -76,7 +84,10 @@ app.controller('PostCtrl', function ($scope) {
 });
 
 app.controller('FollowersCtrl', function ($scope) {
-
+  // Supply the id of the user to follow/unfollow
+  $scope.searchByTag = function (tag) {
+    $scope.usersPosts = searchByTag(tag);
+  };
 });
 
 // Handles the profile page.
