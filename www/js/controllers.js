@@ -52,11 +52,18 @@ app.controller('SearchCtrl', ["$scope", "User", "Post", function ($scope, User, 
     if($scope.activeButton == "users"){
       User.searchUser(input).then(function (data) {
         $scope.users = data;
+        data.forEach(function (image) {
+          image.profilePicture = imageStorageUrlPrepend + image.profilePicture;
+        });
       });
     }
     else {
       Post.searchByTag(input).then(function (data) {
         $scope.tags = data;
+        data.forEach(function (image) {
+          image.img = imageStorageUrlPrepend + image.img;
+        });
+        console.log(data);
       });
     }
   };
