@@ -1,4 +1,8 @@
 <ion-view view-title="Profile">
+  <ion-nav-buttons side="primary">
+      <button class="button-icon icon ion-gear-a" ng-click="modal.show()">
+      </button>
+    </ion-nav-buttons>
   <ion-content>
     <div id="profile-container12">
       <ion-list id="profile-list8">
@@ -9,8 +13,8 @@
               <div class="row"><strong>{{data.username}}</strong></div>
               <div class="row">
                 <div class="col"><p class="statistics">{{data.photos.length || 0}}</p> <h6>Photos</h6></div>
-                <div class="col"><p class="statistics">{{data.following.length}}</p> <h6>Following</h6></div>
-                <div class="col"><p class="statistics">{{data.followers.length}}</p> <h6>Followed</h6></div>
+                <div class="col"><p class="statistics">{{data.following.length || 0}}</p> <h6>Following</h6></div>
+                <div class="col"><p class="statistics">{{data.followers.length || 0}}</p> <h6>Followed</h6></div>
               </div>
             </div>
           </div>

@@ -49,6 +49,7 @@ app.controller('SearchCtrl', function ($scope) {
   $scope.searchByTag = function (tag) {
     $scope.usersPosts = searchByTag(tag);
   };
+
 });
 
 // Handles the phone camera.
@@ -78,6 +79,10 @@ app.controller("PhotoCtrl", function ($scope, $cordovaCamera, $rootScope) {
 
 });
 
+app.controller('PostCtrl', function ($scope) {
+
+});
+
 app.controller('FollowersCtrl', function ($scope) {
   // Supply the id of the user to follow/unfollow
   $scope.searchByTag = function (tag) {
@@ -86,7 +91,7 @@ app.controller('FollowersCtrl', function ($scope) {
 });
 
 // Handles the profile page.
-app.controller('ProfileCtrl', ['$scope', '$cordovaImagePicker', 'User', function ($scope, $cordovaImagePicker, User) {
+app.controller('ProfileCtrl', ['$scope', '$cordovaImagePicker', 'User', '$ionicModal', function ($scope, $cordovaImagePicker, User, $ionicModal) {
 
   // Use User service to get the data about current user at onload of profile
   User.getCurrentUserData().then(function (data) {
@@ -103,7 +108,6 @@ app.controller('ProfileCtrl', ['$scope', '$cordovaImagePicker', 'User', function
     console.log($scope.images)
   });
 
-
 // Handles the image settings and how many images you can see at the time.
   var options = {
 
@@ -112,6 +116,38 @@ app.controller('ProfileCtrl', ['$scope', '$cordovaImagePicker', 'User', function
     height: 300,
     quality: 80
 
+  };
+
+  // Handles the modal functions.
+  $ionicModal.fromTemplateUrl('templates/options.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+  // Opens the modal.
+  $scope.openModal = function() {
+    $scope.modal.show();
+  };
+  // Closes the modal.
+  $scope.closeModal = function() {
+    $scope.modal.hide();
+  };
+  // Cleanup the modal when we're done with it!
+  $scope.$on('$destroy', function() {
+    $scope.modal.remove();
+  });
+  // Execute action on hide modal
+  $scope.$on('modal.hidden', function() {
+    // Execute action
+  });
+  // Execute action on remove modal
+  $scope.$on('modal.removed', function() {
+    // Execute action
+  });
+
+$scope.logout = function () {
+    User.logout();
   };
 
 }]);
