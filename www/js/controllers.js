@@ -34,38 +34,26 @@ app.controller('HomeCtrl', [ "$scope", "User", "Post", function ($scope, User, P
 }]);
 
 // Handles the search events
-app.controller('SearchCtrl', function ($scope, $state) {
+app.controller('SearchCtrl', ["$scope", "User", "Post", function ($scope, User, Post) {
 
-  $scope.activateSearch = function()
-    {
-        $state.go('tab.search-browse');
+  // Initialize variables needed for search
+  $scope.activeButton = "users";
+  $scope.input = "";
+
+  $scope.search = function (input) {
+    if($scope.activeButton == "users"){
+      User.searchUser(input).then(function (data) {
+        $scope.data = data;
+      });
     }
-
-});
-
-app.controller('BrowseCtrl', function($scope){
-
- // Initialize variables needed for search
-  $scope.tag = "";
-  $scope.username = "";
-
-  // Tab control for the search
-   $scope.tabs = {
-        Users: true,
-        Tags: false
-    };
-
-  // User is searched for when field value is changed and if
-  $scope.searchUser = function (username) {
-    $scope.usersFound = searchUser(username);
+    else {
+      Post.searchByTag(input).then(function (data) {
+        $scope.data = data;
+      });
+    }
   };
 
-  // User is searched for when field value is changed and if
-  $scope.searchByTag = function (tag) {
-    $scope.usersPosts = searchByTag(tag);
-  };
-
-});
+}]);
 
 // Handles the phone camera.
 app.controller("PhotoCtrl", function ($scope, $cordovaCamera, $rootScope) {

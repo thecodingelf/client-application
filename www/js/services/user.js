@@ -74,11 +74,9 @@ app.factory('User', ['$http', '$state', '$q', function ($http, $state, $q) {
     getCurrentUserData: function () {
       var userId = Cookies.get('userId').toString();
       var url = serverUrl + 'users/profile/' + Cookies.get('userId');
-      console.log(url);
       return $q(function (resolve, reject) {
         // Send the crafted request for getting profile data of the current user
         $http.get(url).then(function (response) {
-          console.log(response.data);
           // Attach user's data to the scope of the profile controller
           resolve(response.data);
         });
