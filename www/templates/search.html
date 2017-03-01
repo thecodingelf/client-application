@@ -10,43 +10,44 @@
       </form>
     </div>
     <div id="search-container9">
-
-        <div id="search-container17">
-          <div id="search-button-bar10" class="button-bar">
-            <button ng-click="toggleButton()" ng-class="{ 'active': activeButton === 'users' }"
-                    id="search-button57" class="button button-light button-block">Users</button>
-            <button ng-click="toggleButton()" ng-class="{ 'active': activeButton === 'tags' }" id="search-button58" class="button button-light  button-block">Tags</button>
-          </div>
+      <div id="search-container17">
+        <div id="search-button-bar10" class="button-bar">
+          <button ng-click="toggleButton()" ng-class="{ 'active': activeButton === 'users' }"
+                  id="search-button57" class="button button-light button-block">Users
+          </button>
+          <button ng-click="toggleButton()" ng-class="{ 'active': activeButton === 'tags' }" id="search-button58"
+                  class="button button-light  button-block">Tags
+          </button>
         </div>
+      </div>
 
-        <div  ng-show="activeButton === 'users'" ng-repeat="user in users">
+      <div ng-show="activeButton === 'users'" ng-repeat="user in users">
         <ion-item class="item-avatar" id="mesta-list-item13">
           <img ng-src="{{user.profilePicture}}">
           <h2>{{user.username}}</h2>
         </ion-item>
-        </div>
-        <div class="tags_content" ng-show="activeButton === 'tags'">
+      </div>
+      <div class="tags_content" ng-show="activeButton === 'tags'">
 
-      <div id="profile-container13">
-      <div class="row" ng-repeat="tag in tags" ng-if="$index % 3 === 0">
+        <div id="profile-container13">
+          <div class="row" ng-repeat="tag in tags" ng-if="$index % 3 === 0">
 
-        <div class="col col-30" ng-if="$index < tags.length">
-          <img ng-src="{{tags[$index].img}}" width="100%" />
-        </div>
-        <div class="col col-30" ng-if="$index + 1 < tags.length">
-          <img ng-src="{{tags[$index + 1].img}}" width="100%" />
-        </div>
-        <div class="col col-30" ng-if="$index + 1 >= tags.length">
-        </div>
-        <div class="col col-30" ng-if="$index + 2 < tags.length">
-          <img ng-src="{{tags[$index + 2].img}}" width="100%" />
-        </div>
-        <div class="col col-30" ng-if="$index + 2 >=  tags.length">
+            <div class="col col-30" ng-if="$index < tags.length">
+              <img ng-src="{{tags[$index].img}}" width="100%"/>
+            </div>
+            <div class="col col-30" ng-if="$index + 1 < tags.length">
+              <img ng-src="{{tags[$index + 1].img}}" width="100%"/>
+            </div>
+            <div class="col col-30" ng-if="$index + 1 >= tags.length">
+            </div>
+            <div class="col col-30" ng-if="$index + 2 < tags.length">
+              <img ng-src="{{tags[$index + 2].img}}" width="100%"/>
+            </div>
+            <div class="col col-30" ng-if="$index + 2 >=  tags.length">
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-        
-        </div>
 
     </div>
   </ion-content>

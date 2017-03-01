@@ -2,6 +2,7 @@ const imageStorageUrlPrepend = "http://res.cloudinary.com/hvesn9ggf/image/upload
 const serverUrl = "https://mesta-server.herokuapp.com/";
 // Handles the main view.
 app.controller('HomeCtrl', [ "$scope", "User", "Post", function ($scope, User, Post) {
+
 // Creates fake posts to the main view.
   $scope.datas = [{
     username: 'c2koju00',
@@ -35,6 +36,7 @@ app.controller('HomeCtrl', [ "$scope", "User", "Post", function ($scope, User, P
 
 // Handles the search events
 app.controller('SearchCtrl', ["$scope", "User", "Post", function ($scope, User, Post) {
+
 
   // Initialize variables needed for search
   $scope.activeButton = "tags";
@@ -96,6 +98,7 @@ app.controller("PhotoCtrl", function ($scope, $cordovaCamera, $rootScope) {
 
 });
 
+
 app.controller('PostCtrl', function ($scope) {
 
 });
@@ -112,11 +115,11 @@ app.controller('ProfileCtrl', ['$scope', '$cordovaImagePicker', 'User', '$ionicM
 
   // Use User service to get the data about current user at onload of profile
   User.getCurrentUserData().then(function (data) {
-    console.log(data);
     // Prepend the sites const URL to the trailing parameter of the image
     data.profilePicture = imageStorageUrlPrepend + data.profilePicture;
     notprocesses_images = data.photos;
     $scope.images = [];
+
     if(notprocesses_images != undefined){
     notprocesses_images.forEach(function (image) {
       image.img = imageStorageUrlPrepend + image.img;
@@ -168,10 +171,56 @@ app.controller('ProfileCtrl', ['$scope', '$cordovaImagePicker', 'User', '$ionicM
 
 $scope.logout = function () {
     User.logout();
-    $scope.modal.remove();
   };
 
 }]);
+
+app.controller('EditprofileCtrl', function ($scope) {
+
+// Handles the image settings and how many images you can see at the time.
+  var options = {
+
+    maximumImagesCount: 10,
+    width: 300,
+    height: 300,
+    quality: 80
+
+  };
+
+  // Handles the modal functions.
+  $ionicModal.fromTemplateUrl('templates/options.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+  // Opens the modal.
+  $scope.openModal = function() {
+    $scope.modal.show();
+  };
+  // Closes the modal.
+  $scope.closeModal = function() {
+    $scope.modal.hide();
+  };
+  // Cleanup the modal when we're done with it!
+  $scope.$on('$destroy', function() {
+    $scope.modal.remove();
+  });
+  // Execute action on hide modal
+  $scope.$on('modal.hidden', function() {
+    // Execute action
+  });
+  // Execute action on remove modal
+  $scope.$on('modal.removed', function() {
+    // Execute action
+  });
+
+$scope.logout = function () {
+    User.logout();
+    $scope.modal.remove();
+  };
+
+});
 
 app.controller('EditprofileCtrl', function ($scope) {
 
@@ -179,7 +228,6 @@ app.controller('EditprofileCtrl', function ($scope) {
 
 // Handles the login and login out.
 app.controller('LoginCtrl', ['$scope', 'User', function ($scope, User) {
-
   // Initialize variables required for sing-in
   $scope.username = "";
   $scope.password = "";
