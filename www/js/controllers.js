@@ -175,7 +175,6 @@ $scope.logout = function () {
 
 app.controller('EditprofileCtrl', function ($scope) {
 
-
 });
 
 // Handles the login and login out.

@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4991fff2-9bea-4a0f-8ad3-b433574b1875" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.vscode/settings.json" afterPath="$PROJECT_DIR$/.vscode/settings.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers.js" afterPath="$PROJECT_DIR$/www/js/controllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/search.html" afterPath="$PROJECT_DIR$/www/templates/search.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/profile.html" afterPath="$PROJECT_DIR$/www/templates/profile.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,9 +36,11 @@
       <file leaf-file-name="search.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/templates/search.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="17" column="43" lean-forward="false" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
-              <folding />
+            <state relative-caret-position="396">
+              <caret line="21" column="6" lean-forward="false" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+              <folding>
+                <marker date="1488369136030" expanded="true" signature="2014:2025" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -44,8 +48,8 @@
       <file leaf-file-name="controllers.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="47" column="36" lean-forward="false" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
+            <state relative-caret-position="-703">
+              <caret line="129" column="0" lean-forward="false" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -64,8 +68,8 @@
       <file leaf-file-name="profile.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/templates/profile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="14" column="63" lean-forward="false" selection-start-line="14" selection-start-column="63" selection-end-line="14" selection-end-column="63" />
+            <state relative-caret-position="799">
+              <caret line="38" column="39" lean-forward="true" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -75,18 +79,18 @@
         <entry file="file://$PROJECT_DIR$/www/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1760">
-              <caret line="91" column="9" lean-forward="true" selection-start-line="91" selection-start-column="9" selection-end-line="91" selection-end-column="9" />
+              <caret line="80" column="9" lean-forward="false" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
               <folding>
-                <marker date="1488362289989" expanded="true" signature="1027:3019" ph="{...}" />
-                <marker date="1488362289989" expanded="true" signature="2078:2244" ph="{&quot;url&quot;: '/photo'...}" />
-                <marker date="1488362289989" expanded="true" signature="2114:2238" ph="{...}" />
-                <marker date="1488362289989" expanded="true" signature="2138:2230" ph="{&quot;templateUrl&quot;: 'templates/photo.html'...}" />
-                <marker date="1488362289989" expanded="true" signature="2273:2446" ph="{&quot;url&quot;: '/profile'...}" />
-                <marker date="1488362289989" expanded="true" signature="2311:2440" ph="{...}" />
-                <marker date="1488362289989" expanded="true" signature="2336:2432" ph="{&quot;templateUrl&quot;: 'templates/profile.html'...}" />
-                <marker date="1488362289989" expanded="true" signature="2529:2648" ph="{&quot;url&quot;: '/editprofile'...}" />
-                <marker date="1488362289989" expanded="true" signature="2671:2772" ph="{&quot;url&quot;: '/login'...}" />
-                <marker date="1488362289989" expanded="true" signature="2796:2900" ph="{&quot;url&quot;: '/signup'...}" />
+                <marker date="1488369135984" expanded="true" signature="1027:2817" ph="{...}" />
+                <marker date="1488369135984" expanded="true" signature="1876:2042" ph="{&quot;url&quot;: '/photo'...}" />
+                <marker date="1488369135984" expanded="true" signature="1912:2036" ph="{...}" />
+                <marker date="1488369135984" expanded="true" signature="1936:2028" ph="{&quot;templateUrl&quot;: 'templates/photo.html'...}" />
+                <marker date="1488369135984" expanded="true" signature="2071:2244" ph="{&quot;url&quot;: '/profile'...}" />
+                <marker date="1488369135984" expanded="true" signature="2109:2238" ph="{...}" />
+                <marker date="1488369135984" expanded="true" signature="2134:2230" ph="{&quot;templateUrl&quot;: 'templates/profile.html'...}" />
+                <marker date="1488369135984" expanded="true" signature="2327:2446" ph="{&quot;url&quot;: '/editprofile'...}" />
+                <marker date="1488369135984" expanded="true" signature="2469:2570" ph="{&quot;url&quot;: '/login'...}" />
+                <marker date="1488369135984" expanded="true" signature="2594:2698" ph="{&quot;url&quot;: '/signup'...}" />
               </folding>
             </state>
           </provider>
@@ -115,10 +119,10 @@
         <option value="$PROJECT_DIR$/www/js/app.js" />
         <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/templates/signup.html" />
-        <option value="$PROJECT_DIR$/www/templates/profile.html" />
         <option value="$PROJECT_DIR$/www/js/services/post.js" />
         <option value="$PROJECT_DIR$/www/js/services/user.js" />
         <option value="$PROJECT_DIR$/www/templates/search.html" />
+        <option value="$PROJECT_DIR$/www/templates/profile.html" />
         <option value="$PROJECT_DIR$/www/js/controllers.js" />
       </list>
     </option>
@@ -135,8 +139,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-5" />
-    <option name="y" value="14" />
+    <option name="x" value="4" />
+    <option name="y" value="3" />
     <option name="width" value="2408" />
     <option name="height" value="1309" />
   </component>
@@ -373,21 +377,22 @@
       <workItem from="1487722446567" duration="15050000" />
       <workItem from="1487750788391" duration="5370000" />
       <workItem from="1488283044282" duration="503000" />
-      <workItem from="1488290371387" duration="13260000" />
+      <workItem from="1488290371387" duration="15237000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36444000" />
+    <option name="totallyTimeSpent" value="38421000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-5" y="14" width="2408" height="1309" extended-state="0" />
-    <editor active="true" />
+    <frame x="4" y="3" width="2408" height="1309" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15104602" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15104602" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -399,7 +404,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -478,16 +482,16 @@
         <state relative-caret-position="1892">
           <caret line="86" column="0" lean-forward="true" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
           <folding>
-            <marker date="1488362289989" expanded="true" signature="1027:3019" ph="{...}" />
-            <marker date="1488362289989" expanded="true" signature="2078:2244" ph="{&quot;url&quot;: '/photo'...}" />
-            <marker date="1488362289989" expanded="true" signature="2114:2238" ph="{...}" />
-            <marker date="1488362289989" expanded="true" signature="2138:2230" ph="{&quot;templateUrl&quot;: 'templates/photo.html'...}" />
-            <marker date="1488362289989" expanded="true" signature="2273:2446" ph="{&quot;url&quot;: '/profile'...}" />
-            <marker date="1488362289989" expanded="true" signature="2311:2440" ph="{...}" />
-            <marker date="1488362289989" expanded="true" signature="2336:2432" ph="{&quot;templateUrl&quot;: 'templates/profile.html'...}" />
-            <marker date="1488362289989" expanded="true" signature="2529:2648" ph="{&quot;url&quot;: '/editprofile'...}" />
-            <marker date="1488362289989" expanded="true" signature="2671:2772" ph="{&quot;url&quot;: '/login'...}" />
-            <marker date="1488362289989" expanded="true" signature="2796:2900" ph="{&quot;url&quot;: '/signup'...}" />
+            <marker date="1488369135984" expanded="true" signature="1027:2817" ph="{...}" />
+            <marker date="1488369135984" expanded="true" signature="1876:2042" ph="{&quot;url&quot;: '/photo'...}" />
+            <marker date="1488369135984" expanded="true" signature="1912:2036" ph="{...}" />
+            <marker date="1488369135984" expanded="true" signature="1936:2028" ph="{&quot;templateUrl&quot;: 'templates/photo.html'...}" />
+            <marker date="1488369135984" expanded="true" signature="2071:2244" ph="{&quot;url&quot;: '/profile'...}" />
+            <marker date="1488369135984" expanded="true" signature="2109:2238" ph="{...}" />
+            <marker date="1488369135984" expanded="true" signature="2134:2230" ph="{&quot;templateUrl&quot;: 'templates/profile.html'...}" />
+            <marker date="1488369135984" expanded="true" signature="2327:2446" ph="{&quot;url&quot;: '/editprofile'...}" />
+            <marker date="1488369135984" expanded="true" signature="2469:2570" ph="{&quot;url&quot;: '/login'...}" />
+            <marker date="1488369135984" expanded="true" signature="2594:2698" ph="{&quot;url&quot;: '/signup'...}" />
           </folding>
         </state>
       </provider>
@@ -529,16 +533,16 @@
         <state relative-caret-position="1892">
           <caret line="86" column="0" lean-forward="true" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
           <folding>
-            <marker date="1488362289989" expanded="true" signature="1027:3019" ph="{...}" />
-            <marker date="1488362289989" expanded="true" signature="2078:2244" ph="{&quot;url&quot;: '/photo'...}" />
-            <marker date="1488362289989" expanded="true" signature="2114:2238" ph="{...}" />
-            <marker date="1488362289989" expanded="true" signature="2138:2230" ph="{&quot;templateUrl&quot;: 'templates/photo.html'...}" />
-            <marker date="1488362289989" expanded="true" signature="2273:2446" ph="{&quot;url&quot;: '/profile'...}" />
-            <marker date="1488362289989" expanded="true" signature="2311:2440" ph="{...}" />
-            <marker date="1488362289989" expanded="true" signature="2336:2432" ph="{&quot;templateUrl&quot;: 'templates/profile.html'...}" />
-            <marker date="1488362289989" expanded="true" signature="2529:2648" ph="{&quot;url&quot;: '/editprofile'...}" />
-            <marker date="1488362289989" expanded="true" signature="2671:2772" ph="{&quot;url&quot;: '/login'...}" />
-            <marker date="1488362289989" expanded="true" signature="2796:2900" ph="{&quot;url&quot;: '/signup'...}" />
+            <marker date="1488369135984" expanded="true" signature="1027:2817" ph="{...}" />
+            <marker date="1488369135984" expanded="true" signature="1876:2042" ph="{&quot;url&quot;: '/photo'...}" />
+            <marker date="1488369135984" expanded="true" signature="1912:2036" ph="{...}" />
+            <marker date="1488369135984" expanded="true" signature="1936:2028" ph="{&quot;templateUrl&quot;: 'templates/photo.html'...}" />
+            <marker date="1488369135984" expanded="true" signature="2071:2244" ph="{&quot;url&quot;: '/profile'...}" />
+            <marker date="1488369135984" expanded="true" signature="2109:2238" ph="{...}" />
+            <marker date="1488369135984" expanded="true" signature="2134:2230" ph="{&quot;templateUrl&quot;: 'templates/profile.html'...}" />
+            <marker date="1488369135984" expanded="true" signature="2327:2446" ph="{&quot;url&quot;: '/editprofile'...}" />
+            <marker date="1488369135984" expanded="true" signature="2469:2570" ph="{&quot;url&quot;: '/login'...}" />
+            <marker date="1488369135984" expanded="true" signature="2594:2698" ph="{&quot;url&quot;: '/signup'...}" />
           </folding>
         </state>
       </provider>
@@ -580,16 +584,16 @@
         <state relative-caret-position="1892">
           <caret line="86" column="0" lean-forward="true" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
           <folding>
-            <marker date="1488362289989" expanded="true" signature="1027:3019" ph="{...}" />
-            <marker date="1488362289989" expanded="true" signature="2078:2244" ph="{&quot;url&quot;: '/photo'...}" />
-            <marker date="1488362289989" expanded="true" signature="2114:2238" ph="{...}" />
-            <marker date="1488362289989" expanded="true" signature="2138:2230" ph="{&quot;templateUrl&quot;: 'templates/photo.html'...}" />
-            <marker date="1488362289989" expanded="true" signature="2273:2446" ph="{&quot;url&quot;: '/profile'...}" />
-            <marker date="1488362289989" expanded="true" signature="2311:2440" ph="{...}" />
-            <marker date="1488362289989" expanded="true" signature="2336:2432" ph="{&quot;templateUrl&quot;: 'templates/profile.html'...}" />
-            <marker date="1488362289989" expanded="true" signature="2529:2648" ph="{&quot;url&quot;: '/editprofile'...}" />
-            <marker date="1488362289989" expanded="true" signature="2671:2772" ph="{&quot;url&quot;: '/login'...}" />
-            <marker date="1488362289989" expanded="true" signature="2796:2900" ph="{&quot;url&quot;: '/signup'...}" />
+            <marker date="1488369135984" expanded="true" signature="1027:2817" ph="{...}" />
+            <marker date="1488369135984" expanded="true" signature="1876:2042" ph="{&quot;url&quot;: '/photo'...}" />
+            <marker date="1488369135984" expanded="true" signature="1912:2036" ph="{...}" />
+            <marker date="1488369135984" expanded="true" signature="1936:2028" ph="{&quot;templateUrl&quot;: 'templates/photo.html'...}" />
+            <marker date="1488369135984" expanded="true" signature="2071:2244" ph="{&quot;url&quot;: '/profile'...}" />
+            <marker date="1488369135984" expanded="true" signature="2109:2238" ph="{...}" />
+            <marker date="1488369135984" expanded="true" signature="2134:2230" ph="{&quot;templateUrl&quot;: 'templates/profile.html'...}" />
+            <marker date="1488369135984" expanded="true" signature="2327:2446" ph="{&quot;url&quot;: '/editprofile'...}" />
+            <marker date="1488369135984" expanded="true" signature="2469:2570" ph="{&quot;url&quot;: '/login'...}" />
+            <marker date="1488369135984" expanded="true" signature="2594:2698" ph="{&quot;url&quot;: '/signup'...}" />
           </folding>
         </state>
       </provider>
@@ -638,16 +642,16 @@
         <state relative-caret-position="176">
           <caret line="8" column="53" lean-forward="false" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
           <folding>
-            <marker date="1488362289989" expanded="true" signature="1027:3019" ph="{...}" />
-            <marker date="1488362289989" expanded="true" signature="2078:2244" ph="{&quot;url&quot;: '/photo'...}" />
-            <marker date="1488362289989" expanded="true" signature="2114:2238" ph="{...}" />
-            <marker date="1488362289989" expanded="true" signature="2138:2230" ph="{&quot;templateUrl&quot;: 'templates/photo.html'...}" />
-            <marker date="1488362289989" expanded="true" signature="2273:2446" ph="{&quot;url&quot;: '/profile'...}" />
-            <marker date="1488362289989" expanded="true" signature="2311:2440" ph="{...}" />
-            <marker date="1488362289989" expanded="true" signature="2336:2432" ph="{&quot;templateUrl&quot;: 'templates/profile.html'...}" />
-            <marker date="1488362289989" expanded="true" signature="2529:2648" ph="{&quot;url&quot;: '/editprofile'...}" />
-            <marker date="1488362289989" expanded="true" signature="2671:2772" ph="{&quot;url&quot;: '/login'...}" />
-            <marker date="1488362289989" expanded="true" signature="2796:2900" ph="{&quot;url&quot;: '/signup'...}" />
+            <marker date="1488369135984" expanded="true" signature="1027:2817" ph="{...}" />
+            <marker date="1488369135984" expanded="true" signature="1876:2042" ph="{&quot;url&quot;: '/photo'...}" />
+            <marker date="1488369135984" expanded="true" signature="1912:2036" ph="{...}" />
+            <marker date="1488369135984" expanded="true" signature="1936:2028" ph="{&quot;templateUrl&quot;: 'templates/photo.html'...}" />
+            <marker date="1488369135984" expanded="true" signature="2071:2244" ph="{&quot;url&quot;: '/profile'...}" />
+            <marker date="1488369135984" expanded="true" signature="2109:2238" ph="{...}" />
+            <marker date="1488369135984" expanded="true" signature="2134:2230" ph="{&quot;templateUrl&quot;: 'templates/profile.html'...}" />
+            <marker date="1488369135984" expanded="true" signature="2327:2446" ph="{&quot;url&quot;: '/editprofile'...}" />
+            <marker date="1488369135984" expanded="true" signature="2469:2570" ph="{&quot;url&quot;: '/login'...}" />
+            <marker date="1488369135984" expanded="true" signature="2594:2698" ph="{&quot;url&quot;: '/signup'...}" />
           </folding>
         </state>
       </provider>
@@ -659,7 +663,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/services.js" />
     <entry file="file://$PROJECT_DIR$/www/templates/signup.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
@@ -685,18 +688,18 @@
     <entry file="file://$PROJECT_DIR$/www/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1760">
-          <caret line="91" column="9" lean-forward="true" selection-start-line="91" selection-start-column="9" selection-end-line="91" selection-end-column="9" />
+          <caret line="80" column="9" lean-forward="false" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
           <folding>
-            <marker date="1488362289989" expanded="true" signature="1027:3019" ph="{...}" />
-            <marker date="1488362289989" expanded="true" signature="2078:2244" ph="{&quot;url&quot;: '/photo'...}" />
-            <marker date="1488362289989" expanded="true" signature="2114:2238" ph="{...}" />
-            <marker date="1488362289989" expanded="true" signature="2138:2230" ph="{&quot;templateUrl&quot;: 'templates/photo.html'...}" />
-            <marker date="1488362289989" expanded="true" signature="2273:2446" ph="{&quot;url&quot;: '/profile'...}" />
-            <marker date="1488362289989" expanded="true" signature="2311:2440" ph="{...}" />
-            <marker date="1488362289989" expanded="true" signature="2336:2432" ph="{&quot;templateUrl&quot;: 'templates/profile.html'...}" />
-            <marker date="1488362289989" expanded="true" signature="2529:2648" ph="{&quot;url&quot;: '/editprofile'...}" />
-            <marker date="1488362289989" expanded="true" signature="2671:2772" ph="{&quot;url&quot;: '/login'...}" />
-            <marker date="1488362289989" expanded="true" signature="2796:2900" ph="{&quot;url&quot;: '/signup'...}" />
+            <marker date="1488369135984" expanded="true" signature="1027:2817" ph="{...}" />
+            <marker date="1488369135984" expanded="true" signature="1876:2042" ph="{&quot;url&quot;: '/photo'...}" />
+            <marker date="1488369135984" expanded="true" signature="1912:2036" ph="{...}" />
+            <marker date="1488369135984" expanded="true" signature="1936:2028" ph="{&quot;templateUrl&quot;: 'templates/photo.html'...}" />
+            <marker date="1488369135984" expanded="true" signature="2071:2244" ph="{&quot;url&quot;: '/profile'...}" />
+            <marker date="1488369135984" expanded="true" signature="2109:2238" ph="{...}" />
+            <marker date="1488369135984" expanded="true" signature="2134:2230" ph="{&quot;templateUrl&quot;: 'templates/profile.html'...}" />
+            <marker date="1488369135984" expanded="true" signature="2327:2446" ph="{&quot;url&quot;: '/editprofile'...}" />
+            <marker date="1488369135984" expanded="true" signature="2469:2570" ph="{&quot;url&quot;: '/login'...}" />
+            <marker date="1488369135984" expanded="true" signature="2594:2698" ph="{&quot;url&quot;: '/signup'...}" />
           </folding>
         </state>
       </provider>
@@ -725,14 +728,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="63" lean-forward="false" selection-start-line="14" selection-start-column="63" selection-end-line="14" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/services/post.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1188">
@@ -751,16 +746,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/search.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="43" lean-forward="false" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
+        <state relative-caret-position="396">
+          <caret line="21" column="6" lean-forward="false" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+          <folding>
+            <marker date="1488369136030" expanded="true" signature="2014:2025" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="38" column="39" lean-forward="true" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/services.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="47" column="36" lean-forward="false" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
+        <state relative-caret-position="-703">
+          <caret line="129" column="0" lean-forward="false" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
           <folding />
         </state>
       </provider>
