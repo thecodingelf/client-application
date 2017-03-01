@@ -37,18 +37,26 @@ app.controller('HomeCtrl', [ "$scope", "User", "Post", function ($scope, User, P
 app.controller('SearchCtrl', ["$scope", "User", "Post", function ($scope, User, Post) {
 
   // Initialize variables needed for search
-  $scope.activeButton = "users";
+  $scope.activeButton = "tags";
   $scope.input = "";
 
+  $scope.toggleButton = function () {
+    if ($scope.activeButton == "users"){
+      $scope.activeButton = "tags";
+    }
+    else {
+      $scope.activeButton = "users";
+    }
+  };
   $scope.search = function (input) {
     if($scope.activeButton == "users"){
       User.searchUser(input).then(function (data) {
-        $scope.data = data;
+        $scope.users = data;
       });
     }
     else {
       Post.searchByTag(input).then(function (data) {
-        $scope.data = data;
+        $scope.tags = data;
       });
     }
   };
