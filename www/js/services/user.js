@@ -55,7 +55,7 @@ app.factory('User', ['$http', '$state', '$q', function ($http, $state, $q) {
       // Request for loging out
       var req = {
         method: 'POST',
-        url: 'http://mesta-server.herokuapp.com/users/out' + Cookies.get('userId'),
+        url: 'http://mesta-server.herokuapp.com/users/out',
         headers: {
           'Content-Type': 'application/json'
         },
@@ -68,7 +68,7 @@ app.factory('User', ['$http', '$state', '$q', function ($http, $state, $q) {
         // Remove the token in a cookie and move to the login tab
         Cookies.remove('sessionToken');
         Cookies.remove('userId');
-        $state.go('tab.login');
+        $state.go('login');
       });
     },
     getCurrentUserData: function () {
@@ -78,7 +78,7 @@ app.factory('User', ['$http', '$state', '$q', function ($http, $state, $q) {
       return $q(function (resolve, reject) {
         // Send the crafted request for getting profile data of the current user
         $http.get(url).then(function (response) {
-          console.log(response);
+          console.log(response.data);
           // Attach user's data to the scope of the profile controller
           resolve(response.data);
         });

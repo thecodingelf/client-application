@@ -95,14 +95,17 @@ app.controller('ProfileCtrl', ['$scope', '$cordovaImagePicker', 'User', '$ionicM
 
   // Use User service to get the data about current user at onload of profile
   User.getCurrentUserData().then(function (data) {
+    console.log(data);
     // Prepend the sites const URL to the trailing parameter of the image
     data.profilePicture = imageStorageUrlPrepend + data.profilePicture;
     notprocesses_images = data.photos;
     $scope.images = [];
+    if(notprocesses_images != undefined){
     notprocesses_images.forEach(function (image) {
       image.img = imageStorageUrlPrepend + image.img;
       $scope.images.push(image)
     });
+    }
     $scope.data = data;
     $scope.images = data.photos;
     console.log($scope.images)
